@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "firstName": "John",
+      "lastName": "Silver",
+      "age": 400,
+      "phoneNumbers": "66969999"
+    },
+    {
+      "id": 1,
+      "firstName": "Jack",
+      "lastName": "Slaiter",
+      "age": 34,
+      "phoneNumbers": "5555555"
+    },
+    {
+      "id": 2,
+      "firstName": "Jacky",
+      "lastName": "Chan",
+      "age": 52,
+      "phoneNumbers": "02020202"
+    },
+    {
+      "id": 3,
+      "firstName": "Quirky",
+      "lastName": "Upset",
+      "age": 134,
+      "phoneNumbers": "876719360"
+    },
+    {
+      "id": 5,
+      "firstName": "Bruised",
+      "lastName": "Composed",
+      "age": 89,
+      "phoneNumbers": "751728739"
+    }
+  ]
+}
