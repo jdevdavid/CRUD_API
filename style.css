@@ -6,6 +6,15 @@ body{
   background: #F5E9D9;
 }
 /*Таблица*/
+header{
+  position: sticky;   /* Липкое позиционирование */
+  top: 0;    /* Положение сверху */
+  margin: 10px;
+  background-color: #D3C9BB;
+  border: grey solid 2px;
+  padding: 10px;
+  z-index: 2;
+}
 table {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 14px;
@@ -17,7 +26,6 @@ table {
   margin-left: 10%;
   contain: strict; //Таблица не должна влиять на структуру и стили других элементов
 }
-
 
 th {
   font-weight: normal;
@@ -41,7 +49,11 @@ tr:nth-child(2n) {
 .header{
 	/*display: inline-block;*/
 }
-nav > input[type=button], input[type=submit], input[type=reset] {
+/*nav > */
+input[type=number] {
+  height: 80%;
+}
+input[type=button], input[type=submit], input[type=reset] {
   background-color: #EDFFFF;
   border: none;
   color: #6678B1;
@@ -73,14 +85,39 @@ input[type=button]:hover, input[type=submit]:hover{
 .editheader{
 	display: none;
 	margin: 10px;
-
+  border: grey solid 2px;
+  padding: 10px;
 }
 .createheader{
   display: none;
   margin: 10px;
+  border: grey solid 2px;
+  padding: 10px;
 }
 .form1{
  	display: inline-block;
 }
+.menu_line_two{
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
 
-/*Форма*/
+.contain_filter{
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+}
+
+.contain_filter > #div_countersrecordsfilter{
+  display: none;
+}
+
+/*Для сортировки таблицы*/
+th.sorted[data-order="-1"]::after {
+  content: "▼"
+}
+
+th.sorted[data-order="1"]::after {
+  content: "▲"
+}

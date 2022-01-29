@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CRUD API</title>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+	<script src="js/main.js"></script>	
+	<!-- <script src="api.js"></script> -->	
+	<script src="js/demo.js"></script>
+	
+	<script src="js/create.js"></script>
+	<script src="js/edit.js"></script>	
+	<script src="js/delete.js"></script>	
+	<script src="js/filter.js"></script>	
+	<script src="js/sorting.js"></script>	
+
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+		<nav>
+			<a href="Readme.html">Readme</a>
+			<!-- <input type="button" id="demoDataTest" value="Заполнение демо данными таблицы заново"> -->
+			<input type="button" id="demoDataTest2" value="Заполнение демо данными таблицы дополнительно">
+			<input type="number" id="demodatanumber">
+			<!-- <input type="button" id="DemoDataCreate" value="Заполнение демо данными формы добавления">		 -->
+			Число записей в таблице - <label  id="countersrecords">25</label> элементов
+			<!-- for="" -->
+			<div class="menu_line_two">
+				<input type="button" id="create" value="Добавить запись в таблицу">			
+				<input type="button" id="clear" value="Очистить всю таблицу">
+				
+				<div class="contain_filter">
+					<!-- <input type="button" id="filter" value="Фильтровать таблицу">	-->				
+					<label for="">Min</label>
+					<input type="number" id="agefilter_min" oninput="filter()" min="0" max="1000">
+					<label for="">Max</label>
+					<input type="number" id="agefilter_max" oninput="filter()" min="0" max="1000">
+					<div id="div_countersrecordsfilter">Найдено записей - <label for="" id="countersrecordsfilter"></label> элементов</div>
+					<!-- <input type="button" id="nofilter" value="Без фильтров">			 -->
+					</div>
+				</div>
+		</nav>
+
+	<div class="createheader">
+		<b>Create</b><br>
+		<div class="form1">
+			<label for="firstNameCreate">FirstName</label>
+			<input type="text" id="firstNameCreate" required>
+		</div>	
+		<div class="form1">
+			<label for="lastNameCreate">LastName</label>
+			<input type="text" id="lastNameCreate" required>
+		</div>
+		<div class="form1">
+			<label for="ageCreate">Age</label>
+			<input type="text" id="ageCreate" required>
+		</div>
+		<div class="form1">
+			<label for="phoneNumbersCreate">PhoneNumbers</label>
+			<input type="text" id="phoneNumbersCreate" required>
+		</div>
+		<div class="form1">			
+			<input type="button" id="demoDataGenerate" value="Добавить демо данные в форму">
+		</div>
+		<div class="form1">			
+			<input type="submit" id="createRecords" value="Save">
+		</div>
+	</div>
+
+	<div class="editheader">
+		<b>Edit</b><br>
+		<div class="form1">
+			<label for="firstNameEdit">FirstName</label>
+			<input type="text" id="firstNameEdit" required>
+		</div>
+		<div class="form1">
+			<label for="lastNameEdit">LastName</label>
+			<input type="text" id="lastNameEdit" required>
+		</div>
+		<div class="form1">
+			<label for="ageEdit">Age</label>
+			<input type="text" id="ageEdit" required>
+		</div>
+		<div class="form1">
+			<label for="phoneNumbersEdit">Phone</label>
+			<input type="text" id="phoneNumbersEdit" required>
+		</div>
+		<div class="form1">			
+			<input type="submit" id="editRecords" value="Save edited">
+		</div>
+	</div>
+
+</header>
+<main>
+		<table class="table_sort">
+			<thead>
+				<tr>
+					<th>Number</th>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>Age</th>
+					<th>PhoneNumbers</th>			
+					<th>Edit</th>	
+					<th>Delete</th>		
+				</tr>
+			</thead>
+		<tbody id="table">
+			<tr>
+				<td>1</td>
+				<td>Kate</td>				
+				<td>Smith</td>
+				<td>23</td>				
+				<td>232326</td>				
+				<td><button id="1" onclick="editValue(this.id)">Edit</button></td>
+				<td><button id="1" onclick="deleteValue(this.id)">Delete</button></td>				
+			</tr>
+			<tr>				
+				<td>2</td>
+				<td>Olga</td>
+				<td>Frolova</td>
+				<td>26</td>				
+				<td>226266</td>				
+				<td><button id="1" onclick="editValue(this.id)">Edit</button></td>
+				<td><button id="2" onclick="deleteValue(this.id)">Delete</button></td>				
+			</tr>
+		</tbody>
+	</table>
+</main>
+
+<script>
+document.getElementById('create').addEventListener('click', toggleCreateForm, false);
+document.getElementById('createRecords').addEventListener('click', checkingCreating, false);
+
+document.getElementById('editRecords').addEventListener('click', checkingEditing, false);
+
+document.getElementById('demoDataGenerate').addEventListener('click', DemoDataGenerateToCreate, false);
+document.getElementById('demoDataTest2').addEventListener('click', demodataGenerationAndSaveOnLocalStorage, false);
+
+document.getElementById('clear').addEventListener('click', cleartable, false);
+// document.getElementById('filter').addEventListener('click', filter, false);
+// document.getElementById('nofilter').addEventListener('click', VListingall, false);
+
+</script>
+</body>
+</html>
